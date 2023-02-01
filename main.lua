@@ -7,6 +7,6 @@ local item_toxitoid = require("code.item_toxitoid")
 
 -- add description to items
 if EID then
-    EID:addCollectible(Isaac.GetItemIdByName("Toxitoid 1"), "{{ArrowUp}} 1 damage", "Toxitoid 1")
-    EID:addCollectible(Isaac.GetItemIdByName("Toxitoid 2"), "{{ArrowUp}} 0.25 tear speed", "Toxitoid 2")
+    EID:addCollectible(Isaac.GetItemIdByName("Magic Bear"), "{{ArrowUp}} 1 damage", "Magic Bear")
+    EID:addCollectible(Isaac.GetItemIdByName("Magic Lollipop"), "{{ArrowUp}} 0.25 tear speed", "Magic Lollipop")
 end

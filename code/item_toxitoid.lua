@@ -1,6 +1,6 @@
 local mod = BELZEMOD
-local toxitoid_1 = Isaac.GetItemIdByName("Toxitoid 1")
-local toxitoid_2 = Isaac.GetItemIdByName("Toxitoid 2")
+local toxitoid_1 = Isaac.GetItemIdByName("Magic Bear")
+local toxitoid_2 = Isaac.GetItemIdByName("Magic Lollipop")
 local toxitoidDamage = 1
 local toxitoidTearSpeed = 0.25
 local toxitoidSpeed = 0.2
