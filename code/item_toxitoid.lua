@@ -4,7 +4,6 @@ local toxitoid_2 = Isaac.GetItemIdByName("Toxitoid 2")
 local toxitoidDamage = 1
 local toxitoidTearSpeed = 0.25
 local toxitoidSpeed = 0.2
-local toxitoidCost = 1
 
 function mod:EvaluateCache(player, cacheFlags)
 
