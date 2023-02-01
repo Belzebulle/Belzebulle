@@ -5,12 +5,12 @@ local toxitoidDamage = 1
 local toxitoidTearSpeed = 0.25
 local toxitoidSpeed = 0.2
 
-function mod:EvaluateCache(player, cacheFlags)
+function mod:CandyStatUp(player, cacheFlags)
 
     if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED and
-        (player:HasCollectible(toxitoid_1) and player:HasCollectible(toxitoid_2)) then
+    (player:HasCollectible(toxitoid_1) and player:HasCollectible(toxitoid_2)) then
             player.MoveSpeed = player.MoveSpeed + toxitoidSpeed
-        end
+    end
 
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
 
@@ -24,9 +24,8 @@ function mod:EvaluateCache(player, cacheFlags)
         local tearSpeedToAdd = toxitoidTearSpeed * itemCount
         player.ShotSpeed = player.ShotSpeed + tearSpeedToAdd
 
-        end -- end else if
-    end -- end if
-end -- end function
+        end
+    end
+end 
 
-
-mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.EvaluateCache)
+mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.CandyStatUp)
