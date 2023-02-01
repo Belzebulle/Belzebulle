@@ -3,7 +3,7 @@ local mod = BELZEMOD
 
 
 -- include code files
-local item_toxitoid = require("code.item_toxitoid")
+local item_magic_candy = require("code.item_magic_candy")
 
 -- add description to items
 if EID then
