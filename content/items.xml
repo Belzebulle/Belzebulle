@@ -1,5 +1,5 @@
 <items gfxroot="gfx/items/" version="1.0">
     - add a new passive item
-    <passive id="1" name="Magic Bear" gfx="toxitoid.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
-    <passive id="2" name="Magic Lollipop" gfx="toxitoid.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
+    <passive id="1" name="Magic Bear" gfx="magic_bear.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
+    <passive id="2" name="Magic Lollipop" gfx="magic_lollipop.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
 </items>
