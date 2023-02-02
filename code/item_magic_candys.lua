@@ -6,15 +6,32 @@ local candyTearSpeed = 0.25
 local candySpeed = 0.2
 
 
-function superCandy(player)
-    if (player:HasCollectible(magicCandy_1) and player:HasCollectible(magicCandy_2)) then
-            return true
-    end
+local function superCandy(player)
+    return (player:HasCollectible(magicCandy_1) and player:HasCollectible(magicCandy_2))
 end
 
+local function superCandy_2(player)
+    return player:GetCollectibleNum(magicCandy_1)
+    + player:GetCollectibleNum(magicCandy_2) >= 2   
+end
+
+local function countCandy(player)
+    local count = 0
+    count = player:GetCollectibleNum(magicCandy_1) + player:GetCollectibleNum(magicCandy_2)
+    if count > 2 then
+        count = 2
+    end
+    return count
+end
+
+local function updateCandy(player)
+    EID:addCollectible(Isaac.GetItemIdByName("Magic Bear"), "{{ArrowUp}} 1 damage  ("..countCandy(player).."/2)", "Magic Bear")
+    EID:addCollectible(Isaac.GetItemIdByName("Magic Lollipop"), "{{ArrowUp}} 0.25 tear speed ("..countCandy(player).."/2)", "Magic Lollipop")
+end
+
+
+
 function mod:CandyStatUp(player, cacheFlags)
-    
-    -- add speed if player has both items and only one time
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
 
@@ -31,45 +48,40 @@ function mod:CandyStatUp(player, cacheFlags)
 
         end
 
+    if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED then
+            if superCandy(player) then
+                player.MoveSpeed = player.MoveSpeed + candySpeed
+            end
+        end
 
-    -- Not working
-    
-    --if player:GetData().candySpeed == true then
-    --    return
-    --end
-    --if superCandy(player) then
-    --        player.MoveSpeed = player.MoveSpeed + candySpeed
-    --        player:GetData().candySpeed = true
-    --end
-
-    
+    updateCandy(player)
 end
-
 mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.CandyStatUp)
 
+--  WORK 
 function mod:candyTear(tear)
     local player = tear.Parent:ToPlayer()
     if superCandy(player) then
         if tear.Variant == TearVariant.BLUE then
             tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_candy_normal.png")
             tear:GetSprite():LoadGraphics()
-
+            tear:GetData().candyTear = true
         elseif tear.Variant == TearVariant.CUPID_BLUE then
             tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_candy_cupid.png")
             tear:GetSprite():LoadGraphics()
-
+            tear:GetData().candyTear = true
         elseif tear.Variant == TearVariant.LOST_CONTACT then
             tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_candy_lostcontact.png")
             tear:GetSprite():LoadGraphics()
-
+            tear:GetData().candyTear = true
         elseif tear.Variant == TearVariant.PUPULA then
             tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_candy_pupula.png")
             tear:GetSprite():LoadGraphics()
-
+            tear:GetData().candyTear = true
         elseif tear.Variant == TearVariant.HUNGRY then
             tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_cancy_hungry.png")
             tear:GetSprite():LoadGraphics()
-
+            tear:GetData().candyTear = true
         end
     end
 end
@@ -88,10 +100,12 @@ function mod:useCandy(item, rng,  player)
     local tearSpeedToAdd = candyTearSpeed * itemCount
     player.Damage = player.Damage + damageToAdd
     player.ShotSpeed = player.ShotSpeed + tearSpeedToAdd
+        
     player:GetData().candy = {
         damage = damageToAdd,
         tearSpeed = tearSpeedToAdd
     }
+
 
     return {
         Discharge = true,
@@ -112,10 +126,6 @@ function mod:removeCandy()
 
     player.Damage = player.Damage - player:GetData().candy.damage
     player.ShotSpeed = player.ShotSpeed - player:GetData().candy.tearSpeed
-    player:GetData().candy = {
-        damage = 0,
-        tearSpeed = 0
-    }
 end
 
 -- leave the room to remove the effect
