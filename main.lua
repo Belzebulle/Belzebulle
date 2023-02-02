@@ -3,20 +3,9 @@ local mod = BELZEMOD
 
 
 -- include code files
-local item_magic_candy = require("code.item_magic_candys")
-
-
-function mod:calcCandy(player)
-    local candy = 0
-    if player:HasCollectible(Isaac.GetItemIdByName("Magic Bear")) then
-        candy = candy + 1
-    end
-    if player:HasCollectible(Isaac.GetItemIdByName("Magic Lollipop")) then
-        candy = candy + 1
-    end
-    return candy
-end
-
+local item_magic_bear_lollipop = require("code.item_magic_bear_lollipop")
+local item_magic_candy = require("code.item_magic_candy")
+local tear_on_transformation = require("code.tear_on_transformation")
 
 -- add description to items
 if EID then

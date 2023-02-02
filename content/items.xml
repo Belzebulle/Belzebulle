@@ -2,5 +2,5 @@
     - add a new passive item
     <passive id="1" name="Magic Bear" gfx="magic_bear.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
     <passive id="2" name="Magic Lollipop" gfx="magic_lollipop.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
-    <active id="3" name="Magic Candy" gfx="magic_candy.png" description="A Magic Candy" quality="2" maxcharges="3" chargetype="normal" />
+    <active id="3" name="Magic Candy" gfx="magic_candy.png" description="A Magic Candy" quality="3" maxcharges="3" chargetype="normal" />
 </items>
