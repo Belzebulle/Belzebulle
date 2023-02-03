@@ -3,6 +3,7 @@ local mod = BELZEMOD
 
 
 -- include code files
+local item_test_chatgpt = require("code.item_test_chatgpt")
 local item_magic_bear_lollipop = require("code.item_magic_bear_lollipop")
 local item_magic_candy = require("code.item_magic_candy")
 local tear_on_transformation = require("code.tear_on_transformation")
