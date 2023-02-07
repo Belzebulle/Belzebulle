@@ -25,8 +25,10 @@ local function countCandy(player)
 end
 
 local function updateCandy(player)
-    EID:addCollectible(Isaac.GetItemIdByName("Magic Bear"), "{{ArrowUp}} 1 damage  ("..countCandy(player).."/2)", "Magic Bear")
-    EID:addCollectible(Isaac.GetItemIdByName("Magic Lollipop"), "{{ArrowUp}} 0.25 tear speed ("..countCandy(player).."/2)", "Magic Lollipop")
+    if EID then
+        EID:addCollectible(Isaac.GetItemIdByName("Magic Bear"), "{{ArrowUp}} 1 damage  ("..countCandy(player).."/2)", "Magic Bear")
+        EID:addCollectible(Isaac.GetItemIdByName("Magic Lollipop"), "{{ArrowUp}} 0.25 tear speed ("..countCandy(player).."/2)", "Magic Lollipop")
+    end
 end
 
 
