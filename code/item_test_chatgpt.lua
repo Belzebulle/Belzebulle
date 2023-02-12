@@ -1,7 +1,5 @@
 local mod = BELZEMOD
 
-local item = Isaac.GetItemIdByName("DamageBoost")
-
 -- item which have 50% chance to spawn a tear and double damage (create a class for this)
 
 local function newTear(tear)
