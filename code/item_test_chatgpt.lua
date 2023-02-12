@@ -13,14 +13,4 @@ local function newTear(tear)
     return Tear
 end
 
-function mod:addTearOnShoot(tear)
-    if tear.Parent:ToPlayer():HasCollectible(item) then
-        if math.floor(math.random(1, 2)) == 1 then
-            tear.CollisionDamage = tear.CollisionDamage * 2
-            tear:GetSprite():ReplaceSpritesheet(0, "gfx/projectiles/tear_arachna_normal.png")
-            tear:GetSprite():LoadGraphics()
-        end
-    end
-end
-
 mod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, mod.addTearOnShoot)
