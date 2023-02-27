@@ -1,6 +1,9 @@
-<items gfxroot="gfx/items/" version="1.0">
+<items gfxroot="gfx/items/" version="1.0 " deathanm2="gfx/item_on_death.anm2">
     - add a new passive item
-    <passive id="1" name="Magic Bear" gfx="magic_bear.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
-    <passive id="2" name="Magic Lollipop" gfx="magic_lollipop.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
-    <active id="3" name="Magic Candy" gfx="magic_candy.png" description="A Magic Candy" quality="3" maxcharges="3" chargetype="normal" />
+    <passive id="0" name="Magic Bear" gfx="magic_bear.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
+    <passive id="1" name="Magic Lollipop" gfx="magic_lollipop.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
+    <active id="2" name="Magic Candy" gfx="magic_candy.png" description="A Magic Candy" quality="3" maxcharges="3" chargetype="normal" />
+
+    <passive id="3" name="Swordman" gfx="card_sword.png" description="You will be the sword" quality="2" cache="damage" />
+    <passive id="4" name="Shieldman" gfx="card_shield.png" description="You will be the shield" quality="2" maxhearts="2" hearts="2"/>
 </items>

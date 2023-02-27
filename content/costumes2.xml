@@ -1,0 +1,3 @@
+<costumes anm2root="gfx/characters/">
+	<costume anm2path="swordman.anm2" type="passive" id="4" />
+</costumes>

@@ -10,5 +10,3 @@ local function newTear(tear)
     Tear:GetSprite():LoadGraphics()
     return Tear
 end
-
-mod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, mod.addTearOnShoot)

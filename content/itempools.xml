@@ -4,5 +4,7 @@
         <Item id="1" weight="1" descreaseBy="1" removeOn="0.1" />
         <Item id="2" weight="1" descreaseBy="1" removeOn="0.1" />
         <Item id="3" weight="1" descreaseBy="1" removeOn="0.1" />
+        <Item id="4" weight="1" descreaseBy="1" removeOn="0.1" />
+        <Item id="5" weight="1" descreaseBy="1" removeOn="0.1" />
     </Pool>
 </ItemPools>
