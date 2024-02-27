@@ -1,0 +1,12 @@
+<players root="gfx/characters/dav/" portraitroot="gfx/ui/stage/" nameimageroot="gfx/ui/boss/">
+    <player name="Dav"
+        skin="character_dav.png"
+        nameimage="playername_dav.png"
+        hp="3"
+        armor="1"
+        keys="1"
+        bombs="1"
+        portrait="playerportrait_dav.png"
+        skinColor="-1"
+    />
+</players>

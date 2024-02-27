@@ -1,3 +1,6 @@
 <costumes anm2root="gfx/characters/">
-	<costume anm2path="swordman.anm2" type="passive" id="4" />
+	<costume anm2path="swordman.anm2" type="passive" id="0" />
+
+	<costume anm2path="dav_hair.anm2" type="none" priority="100" />
+	<costume anm2path="dav_stoles.anm2" type="none" priority="100" />
 </costumes>
