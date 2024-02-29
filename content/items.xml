@@ -2,9 +2,5 @@
     <passive id="0" name="Swordman" gfx="card_sword.png" description="You will be the sword" quality="2" cache="damage" />
     <passive id="1" name="Shieldman" gfx="card_shield.png" description="You will be the shield" quality="2" maxhearts="2" hearts="2"/>
 
-    <passive id="2" name="Magic Bear" gfx="magic_bear.png" description="A Magic Candy Bear" quality="1" cache="damage speed" />
-    <passive id="3" name="Magic Lollipop" gfx="magic_lollipop.png" description="A Magic Candy Lollipop" quality="1" cache="shotspeed speed" />
-    <active id="4" name="Magic Candy" gfx="magic_candy.png" description="A Magic Candy" quality="3" maxcharges="3" chargetype="normal" />
-
-    <active id="5" name="Gravitum" gfx="gravitum.png" description="Gravitum" quality="4" maxcharges="6" chargetype="normal" />
+    <passive id="2" name="Game Breaker?" gfx="gb.png" description="Did you try to destroy your run ?" quality="4" cache="damage" />
 </items>
