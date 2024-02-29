@@ -1,0 +1,4 @@
+*.py
+*.txt
+.luarc.json
+.vscode/settings.json
